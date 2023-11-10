@@ -1,6 +1,6 @@
-from Person import Person
+from Eier import Eier
 class BankKonto:
-    def __init__(self, eier: Person, kontonummer: int):
+    def __init__(self, eier: Eier, kontonummer: int):
         self.__eier = f"{eier.fornavn} {eier.etternavn}"
         self.__saldo = 0
         self.__kontonummer = kontonummer
@@ -12,11 +12,11 @@ class BankKonto:
     def __str__(self) -> str:
         print("")
         return f"Konto: \n {' '*2} {'Eier'.ljust(10)} : {self.__eier}  \n {' '*2} {'Kontonummer'.ljust(10)} : {self.__kontonummer}  \n {' '*2} {'Saldo'.ljust(10)} : {self.__saldo}"
-    def sett_inn_penger(self, beløp:int) -> bool:
+    def sett_inn_penger(self, innskudd:int) -> bool:
         print("")
-        if beløp >= 0:
-            self.__saldo += beløp
-            print(f"Du satt inn et beløp på {beløp}, du har nå {self.__saldo} kroner på kontoen")
+        if innskudd >= 0:
+            self.__saldo += innskudd
+            print(f"Du satt inn et beløp på {innskudd}, du har nå {self.__saldo} kroner på kontoen")
             return True
         print(f"Du kan ikke sette inn et negativt beløp")
         return False
@@ -36,9 +36,8 @@ class BankKonto:
     def saldo(self):
         return self.__saldo
 def main():
-    HHermansen = Person("Hege", "Hermansen", "12309192")
+    HHermansen = Eier("Hege", "Hermansen", "12309192")
     konto = BankKonto(HHermansen,"1020.30.45678")
-    konto.sett_inn_penger(10)
     print(konto.saldo)
 
 if __name__ == '__main__':

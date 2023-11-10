@@ -1,7 +1,7 @@
 from BankKonto import BankKonto
-from Person import Person
+from Eier import Eier
 class SpareKonto(BankKonto):
-    def __init__(self, eier: Person, kontonummer:str, maks_antall_uttak:int):
+    def __init__(self, eier: Eier, kontonummer:str, maks_antall_uttak:int):
         super().__init__(eier, kontonummer)
         self.__maks_antall_uttak = maks_antall_uttak
         self.__antall_uttak = 0
@@ -25,7 +25,7 @@ class SpareKonto(BankKonto):
         return self.__antall_uttak
 
 def main():
-    HHermansen = Person("Hege", "Hermansen", "12309192")
+    HHermansen = Eier("Hege", "Hermansen", "12309192")
     spare_konto = SpareKonto(HHermansen,"1020.30.45678", 11)
     print(spare_konto)
     assert spare_konto.__saldo == 0, "Saldo må være satt til 0 ved start"

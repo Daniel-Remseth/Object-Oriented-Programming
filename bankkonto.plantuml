@@ -1,7 +1,6 @@
 class Eier{
     -navn:str
     -Telefonnummer:int
-    bankkonto(er):list
 
 }
 class Bankkonto{
@@ -29,7 +28,7 @@ class BSUKonto{
 }
 
 
-Eier "1,2,,,"*-- Bankkonto
+Eier --o "1" Bankkonto
 
 
 Sparekonto --|> Bankkonto

@@ -1,12 +1,12 @@
 from BankKonto import BankKonto
-from Person import Person
+from Eier import Eier
 class BSU(BankKonto):
-    def __init__(self, eier: Person, kontonummer:str, maksbeløp: float):
+    def __init__(self, eier: Eier, kontonummer:str, maksbeløp: float):
         super().__init__(eier, kontonummer)
         self.__nåværende_beløp = 0
         self.__maksbeløp = maksbeløp
     def ta_ut_penger(self, beløp: int) -> bool:
-        if (self.__nåværende_beløp+beløp) <= self.__maksbeløp and beløp > 0:
+        if (self.__nåværende_beløp+beløp) <= self.__maksbeløp and beløp >= 0:
             if super().ta_ut_penger(beløp):
                 self.__nåværende_beløp += beløp
                 return True
@@ -19,11 +19,11 @@ class BSU(BankKonto):
     
     @property
     def nåværende_beløp(self):
-        return self.nåværende_beløp
+        return self.__nåværende_beløp
     @property
     def maksbeløp(self):
         return self.__maksbeløp
 def main():
-    HHermansen = Person("Hege", "Hermansen", "12309192")
+    HHermansen = Eier("Hege", "Hermansen", "12309192")
 if __name__ == '__main__':
     main()

@@ -4,7 +4,7 @@ import sys
 #Make sure to cd to assertiontests
 sys.path.append('..')
 from BankKonto import BankKonto
-from Person import Person
+from Eier import Eier
 #The general strucure for the unittests
 class AssertionTests(unittest.TestCase):
     #Note that now every test case happends under the same AssertionTest, which is bad pracisce
@@ -12,7 +12,7 @@ class AssertionTests(unittest.TestCase):
 
     #Testing initail feature of test_bankonto
     def setUp(self) -> None:
-        miriam = Person('Miriam', 'Castillo Amo', 1234123123)
+        miriam = Eier('Miriam', 'Castillo Amo', 1234123123)
         self.miriam_bankkonto = BankKonto(miriam, 123123123) 
         return super().setUp()
     def test_bankkonto_adding(self):

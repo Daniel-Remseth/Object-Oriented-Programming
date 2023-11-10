@@ -5,7 +5,7 @@ import sys
 #Make sure to cd to assertiontests
 sys.path.append('..')
 from BSU import BSU 
-from Person import Person
+from Eier import Eier
 
 
 #This test will test new features added upon BSU 
@@ -13,7 +13,7 @@ from Person import Person
 class AssertionTests(unittest.TestCase):
     #Same setup as found in the test found for BankKonto except that we now init for BSU
     def setUp(self) -> None:
-        miriam = Person('Miriam', 'Castillo Amo', 1234123123)
+        miriam = Eier('Miriam', 'Castillo Amo', 1234123123)
         self.miriam_bankkonto = BSU(miriam, 123123123, 1000) 
         return super().setUp()
     #Note that 1000 has been set to be the max amount to be withdrawn for every test

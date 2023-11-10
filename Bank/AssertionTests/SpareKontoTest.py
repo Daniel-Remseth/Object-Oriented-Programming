@@ -5,7 +5,7 @@ import sys
 #Make sure to cd to assertiontests
 sys.path.append('..')
 from SpareKonto import SpareKonto 
-from Person import Person
+from Eier import Eier
 
 
 #This test will test new features added upon BSU 
@@ -14,7 +14,7 @@ class AssertionTests(unittest.TestCase):
     #Not that there is no real reason for setup given that there is only one test case
     def test_sparekonto_exceed_maxwithdrawls(self):
         # Initial
-        miriam = Person('Miriam', 'Castillo Amo', 1234123123)
+        miriam = Eier('Miriam', 'Castillo Amo', 1234123123)
         self.miriam_bankkonto = SpareKonto(miriam, 123123123, 10) 
 
         self.miriam_bankkonto.sett_inn_penger(1000)
